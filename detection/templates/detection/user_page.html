@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="{% static 'css/user_page.css' %}">
+</head>
+<body>
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Here you can view your uploaded images.</p>
+    
+    {% if user_images %}
+        <div>
+            {% for image in user_images %}
+                <img src="{{ image.image.url }}" alt="Uploaded Image">
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No images uploaded yet.</p>
+    {% endif %}
+</body>
+</html>

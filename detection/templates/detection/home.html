@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Include CSS stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <h2>Welcome to Skin Disease Detection</h2>
+    <p>Please select an option:</p>
+    <ul>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+    </ul>
+    <!-- Include Logo Image -->
+    <img src="{% static 'images/log.jpg' %}" alt="Logo">
+</body>
+</html>
